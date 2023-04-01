@@ -33,7 +33,7 @@ class Pilots extends model
         return $array;
     }
 
-    
+
     public function getInfo($id, $id_company)
     {
         $array = array();
@@ -43,12 +43,11 @@ class Pilots extends model
         $sql->bindValue("id_company", $id_company);
         $sql->execute();
 
-        if($sql->rowCount() > 0 ){
-			$array = $sql->fetch();
+        if ($sql->rowCount() > 0) {
+            $array = $sql->fetch();
 
-			$array['tourney_registration'] = explode(',', $array['tourney_registration']);
-
-		}
+            $array['tourney_registration'] = explode(',', $array['tourney_registration']);
+        }
 
         return $array;
     }
@@ -67,6 +66,39 @@ class Pilots extends model
 
 
         return $r;
+    }
+
+    public function isRegistered($fullname_pilot, $cellphone, $nickname_pilot, $cpf, $birth_date)
+    {
+
+        $sql = $this->db->prepare("SELECT * FROM pilots WHERE cpf = :cpf");
+        $sql->bindValue(':cpf', $cpf);
+
+        $sql->execute();
+
+
+        if ($sql->rowCount() > 0) {
+            $sql->fetch();
+
+            return true;
+        } else {
+            $this->registerPilots($fullname_pilot, $cellphone, $nickname_pilot, $cpf, $birth_date, 1);
+        }
+    }
+
+
+    public function registerPilots($fullname_pilot, $cellphone, $nickname_pilot, $cpf, $birth_date, $id_company)
+    {
+
+        $sql = $this->db->prepare("INSERT INTO pilots SET fullname_pilot = :fullname_pilot, cellphone = :cellphone, nickname_pilot = :nickname_pilot, cpf = :cpf, birth_date = :birth_date, date_registration = NOW(), id_company = :id_company");
+
+        $sql->bindValue(":fullname_pilot", $fullname_pilot);
+        $sql->bindValue("cellphone", $cellphone);
+        $sql->bindValue("nickname_pilot", $nickname_pilot);
+        $sql->bindValue("cpf", $cpf);
+        $sql->bindValue("birth_date", $birth_date);
+        $sql->bindValue(":id_company", $id_company);
+        $sql->execute();
     }
 
     public function add($fullname_pilot, $cellphone, $nickname_pilot, $cpf, $birth_date, $id_company)
@@ -94,7 +126,7 @@ class Pilots extends model
         $sql->bindValue("nickname_pilot", $nickname_pilot);
         $sql->bindValue("cpf", $cpf);
         $sql->bindValue("birth_date", $birth_date);
-        
+
         $sql->execute();
     }
 
@@ -106,15 +138,16 @@ class Pilots extends model
         $sql->execute();
     }
 
-    public function tourneyRegistration($id, $plist, $id_company){
-		$tourney_registration = implode(',', $plist);
+    public function tourneyRegistration($id, $plist, $id_company)
+    {
+        $tourney_registration = implode(',', $plist);
 
-		$sql = $this->db->prepare("UPDATE pilots SET tourney_registration = :tourney_registration WHERE id = :id AND id_company = :id_company");
-		$sql->bindValue(":id", $id);
-		$sql->bindValue(":id_company", $id_company);
-		$sql->bindValue(":tourney_registration", $tourney_registration);
-		$sql->execute();
-	}
+        $sql = $this->db->prepare("UPDATE pilots SET tourney_registration = :tourney_registration WHERE id = :id AND id_company = :id_company");
+        $sql->bindValue(":id", $id);
+        $sql->bindValue(":id_company", $id_company);
+        $sql->bindValue(":tourney_registration", $tourney_registration);
+        $sql->execute();
+    }
 
     public function searchPilots($sp, $id_company)
     {
@@ -130,5 +163,4 @@ class Pilots extends model
         }
         return $array;
     }
-
 }
