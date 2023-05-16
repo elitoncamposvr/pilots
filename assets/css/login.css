@@ -6,8 +6,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
 :root {
-    --primary: #014399;
-    --secondary: #0070E6;
+    --primary: #1B2430;
+    --secondary: #1c232c;
     --tertiary: #EAB00B;
     --success: #5cb377;
     --danger: #e63946;
@@ -24,7 +24,7 @@
     --green: #198754;
     --teal: #20c997;
     --cyan: #0dcaf0;
-    --light-gray: #dfe6e9;
+    --light-gray: #5c6a70;
     --gray: #6c757d;
     --gray-dark: #343a40;
 }
@@ -42,16 +42,11 @@ body {
     font-family: 'Nunito', sans-serif;
     scrollbar-color: var(--gray-dark);
     scrollbar-width: thin;
-    /* background-color: #eee; */
-    color: #6c757d;
+    background-color: black;
+    color: white;
     display: flex;
     width: 100%;
     align-items: center;
-    background: #9053c7;
-    background: -webkit-linear-gradient(-135deg, #2c3e50, #4158d0);
-    background: -o-linear-gradient(-135deg, #2c3e50, #4158d0);
-    background: -moz-linear-gradient(-135deg, #2c3e50, #4158d0);
-    background: linear-gradient(-135deg, #2c3e50, #4158d0);
 }
 
 .container {
@@ -59,12 +54,13 @@ body {
     margin: 0 auto;
     max-width: 500px;
     padding: 40px;
-    background-color: #fff;
+    background-color: var(--secondary);
     margin: 0 auto;
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
 
 .container-register {
@@ -72,13 +68,14 @@ body {
     margin: 0 auto;
     max-width: 500px;
     padding: 40px;
-    background-color: #fff;
+    background-color: var(--secondary);
     margin: 0 auto;
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    flex-direction: column;
 }
 
 input[type=text],
@@ -89,24 +86,12 @@ input[type=email],
 input[type=number] {
     width: 100%;
     padding: 10px;
-    border-top: 1px solid var(--light-gray);
-    border-right: 1px solid var(--light-gray);
-    border-left: 1px solid var(--light-gray);
-    border-bottom: 2.5px solid var(--tertiary);
-    background-color: white;
+    background-color: var(--light-gray);
+    color: white;
     border-radius: 4px;
     box-shadow: rgba(1, 26, 58, 0.08) 0px 0.5px 0px 0px;
     outline: 0;
-}
-
-input[type=text]:focus,
-input[type=date]:focus,
-input[type=time]:focus,
-input[type=password]:focus,
-input[type=email]:focus,
-input[type=date]:focus,
-input[type=time]:focus {
-    border-bottom: 2.5px solid var(--primary);
+    border: 0;
 }
 
 #login #cpf,
@@ -117,22 +102,18 @@ input[type=time]:focus {
     margin-bottom: 20px;
     border-radius: 5px;
     border: 0px;
-    border-top: 1px solid var(--light-gray);
-    border-right: 1px solid var(--light-gray);
-    border-left: 1px solid var(--light-gray);
-    border-bottom: 2.5px solid var(--tertiary);
     outline: 0;
 }
 
-#login #cpf:focus,
-#login #birth_date:focus {
-    border-bottom: 2.5px solid var(--primary);
+#login #cpf::placeholder,
+#login #birth_date::placeholder {
+    color: white;
 }
 
 button {
     width: 100%;
     padding: 20px;
-    background-color: var(--tertiary);
+    background-color: var(--danger);
     color: white;
     border-radius: 5px;
     text-transform: uppercase;
@@ -143,21 +124,22 @@ button {
 }
 
 button:hover {
-    background-color: #c5640e;
+    background-color: red;
     color: #FFF;
 }
 
 #form-register {
     margin-bottom: 15px;
     text-align: center;
+    background-color: var(--secondary);
 }
 
 .link-login {
-    color: var(--tertiary);
+    color: #6c757d;
 }
 
 .link-login:hover {
-    color: var(--secondary);
+    color: #6c757d;
 }
 
 p {
@@ -172,11 +154,11 @@ h1 {
 }
 
 a {
-    color: var(--primary);
+    color: #6c757d;
 }
 
 a:hover {
-    color: var(--secondary);
+    color: #6c757d;
 }
 
 .warning {
@@ -192,7 +174,7 @@ a:hover {
     padding: 15px;
     margin: 10px 0;
     border-radius: 5px;
-    color: var(--secondary);
+    color: #6c757d;
 }
 
 #warning_caps {
@@ -215,7 +197,21 @@ a:hover {
     margin-bottom: 10px;
 }
 
+.logo-field {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
+.logo{
+    width: 100%;
+}
+
+.logo-sponsor{
+    width: 100%;
+    max-width: 100px;
+}
 .border {
     border: 1px solid red;
 }

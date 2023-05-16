@@ -9,18 +9,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
 :root {
-    --primary: #014399;
-    --secondary: #0070E6;
+    --primary: #1B2430;
+    --secondary: #1c232c;
     --tertiary: #EAB00B;
     --success: #5cb377;
     --danger: #e63946;
     --warning: #EEBF41;
     --info: #5b99ea;
-    --light-gray: #dfe6e9;
     --gray: #6c757d;
-    --gray-dark: #343a40;
 
-    /* --blue: #2196F3;
+    --blue: #2196F3;
     --indigo: #3F51B5;
     --purple: #6f42c1;
     --pink: #d63384;
@@ -29,7 +27,9 @@
     --yellow: #ffc107;
     --green: #198754;
     --teal: #20c997;
-    --cyan: #0dcaf0; */
+    --cyan: #0dcaf0;
+    --light-gray: #5c6a70;
+    --gray-dark: #343a40;
 
 }
 
@@ -46,8 +46,8 @@ body {
     font-family: 'Nunito', sans-serif;
     scrollbar-color: var(--gray-dark);
     scrollbar-width: thin;
-    background-color: var(--light-gray);
-    color: #3E3E3E;
+    background-color: black;
+    color: var(--light-gray);
     width: 100%;
     position: relative;
 }
@@ -73,44 +73,30 @@ input[type=time],
 input[type=password],
 input[type=email],
 input[type=number] {
-    padding: 10px;
-    border-top: 1px solid var(--light-gray);
-    border-right: 1px solid var(--light-gray);
-    border-left: 1px solid var(--light-gray);
-    border-bottom: 2.5px solid var(--tertiary);
-    background-color: white;
+    padding: 14px;
+    background-color: var(--light-gray);
     border-radius: 4px;
     box-shadow: rgba(1, 26, 58, 0.08) 0px 0.5px 0px 0px;
     outline: 0;
+    border: 0;
+    color: white;
 }
 
 input[type=date],
 input[type=time] {
-    padding: 8px;
-    border-top: 1px solid var(--light-gray);
-    border-right: 1px solid var(--light-gray);
-    border-left: 1px solid var(--light-gray);
-    border-bottom: 2.5px solid var(--tertiary);
-    background-color: white;
+    padding: 14px;
+    background-color: var(--light-gray);
     border-radius: 5px;
     box-shadow: rgba(1, 26, 58, 0.08) 0px 0.5px 0px 0px;
     outline: 0;
+    border: 0;
+    color: white;
 }
 
 input[type=file] {
     padding: 8px;
     border-radius: 5px;
     outline: 0;
-}
-
-input[type=text]:focus,
-input[type=date]:focus,
-input[type=time]:focus,
-input[type=password]:focus,
-input[type=email]:focus,
-input[type=date]:focus,
-input[type=time]:focus {
-    border-bottom: 2.5px solid var(--primary);
 }
 
 select {
@@ -149,26 +135,28 @@ textarea:focus {
 }
 
 button {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--danger);
     color: white;
-    font-weight: 500;
-    background-color: var(--tertiary);
     border-radius: 5px;
-    padding: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
     cursor: pointer;
     border: 0;
     transition: all 0.2s ease;
 }
 
 button:hover {
-    background-color: #c5640e;
-    color: white;
+    background-color:red;
+    color: #FFF;
 }
 
 button,
 input[type=submit] {
     color: white;
     font-weight: 500;
-    background-color: var(--tertiary);
+    background-color: var(--danger);
     border-radius: 5px;
     padding: 12px;
     cursor: pointer;
@@ -179,14 +167,14 @@ input[type=submit] {
 
 button:hover,
 input[type=submit]:hover {
-    background-color: #c5640e;
+    background-color: red;
     color: white;
 }
 
 .btn {
     color: white;
     font-weight: 500;
-    background-color: var(--tertiary);
+    background-color: var(--danger);
     border-radius: 5px;
     padding: 8px;
     cursor: pointer;
@@ -195,7 +183,7 @@ input[type=submit]:hover {
 }
 
 .btn:hover {
-    background-color: #c5640e;
+    background-color: red;
     color: white;
     transition: all 0.2s ease;
 }
@@ -242,7 +230,7 @@ input[type=submit]:hover {
     flex-wrap: wrap;
     position: relative;
     padding: 20px 12px;
-    
+
 }
 
 
@@ -253,14 +241,11 @@ input[type=submit]:hover {
     height: 100%;
     padding: 12px;
     margin: 0 auto;
-    background-color: white;
+    background-color: var(--secondary);
     border-radius: 5px;
     align-items: stretch;
     position: relative;
-    box-shadow:
-        rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-        
+
 }
 
 footer {
@@ -373,7 +358,6 @@ footer {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
-    ;
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
@@ -433,7 +417,8 @@ th {
     display: flex;
     font-weight: 700;
     padding: 12px 5px;
-    background-color: #dddddd;
+    background-color: var(--gray-dark);
+    color: var(--light-gray);
     border-radius: 5px;
     text-align: left;
 }
@@ -442,7 +427,8 @@ th {
     width: 100%;
     display: flex;
     padding: 8px 5px;
-    background-color: #edeaea;
+    background-color: var(--light-gray);
+    color:black;
     border-radius: 5px;
     margin-top: 5px;
 }
@@ -672,7 +658,8 @@ th {
 }
 
 .bg_positive {
-    background-color: #d3e7fc;
+    background-color: var(--light-gray);
+    color: black;
 }
 
 .bg_success {
@@ -865,6 +852,7 @@ th {
     background-color: var(--light-gray);
     padding: 10px;
     border-radius: 5px;
+    color:black;
 }
 
 #schedule--form-aditional-info {
@@ -908,8 +896,23 @@ th {
     font-weight: 600;
     padding: 10px 0;
 }
+
 .links-center {
     width: 100%;
     text-align: center;
     padding: 10px 0;
+}
+
+/* BREADCRUMB */
+.logo--field {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.logo{
+    max-height: 150px;
 }

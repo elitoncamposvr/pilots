@@ -24,9 +24,10 @@
 </head>
 
 <body>
-
   <div class="container">
-
+    <div class="logo--field">
+      <img src="<?php echo BASE_URL; ?>assets/images/fkart-logo.png" class="logo" alt="Logo Fkart">
+    </div>
     <form id="login" method="POST">
       <h1>Entre com seus dados</h1>
       <?php if (isset($error) && !empty($error)) : ?>
@@ -39,8 +40,12 @@
       <input type="date" name="birth_date" class="birth_date" id="birth_date" placeholder="Data de Nascimento" required>
       <p><button type="submit">Entrar</button></p><br>
       <p><a href="<?php echo BASE_URL; ?>login/register">Ainda não tem cadastro? Registre-se!</a></p><br>
-      <p>Fkart - Sistema Desenvolvido por <a href="https://7upweb.com.br/">7UpWeb</a></p>
     </form>
+    <div class="logo--field">
+      <img src="<?php echo BASE_URL; ?>assets/images/force-kart.png" class="logo-sponsor" alt="Logo Force Kart">
+      <img src="<?php echo BASE_URL; ?>assets/images/acka.png" class="logo-sponsor" alt="Logo ACKA">
+    </div>
+
   </div>
 
   <!-- SCRIPTS JS -->

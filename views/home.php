@@ -1,3 +1,13 @@
+<div class="logo--field">
+	<span>
+		<img src="<?php echo BASE_URL; ?>assets/images/fkart-logo.png" class="logo" alt="Logo Fkart">
+	</span>
+	<span>
+		<img src="<?php echo BASE_URL; ?>assets/images/force-kart.png" class="logo" alt="Logo Fkart">
+		<img src="<?php echo BASE_URL; ?>assets/images/acka.png" class="logo" alt="Logo Fkart">
+	</span>
+</div>
+
 <div class="breadcrumb">
 	<span></span>
 	<a href="<?php echo BASE_URL; ?>login/logout" class="btn">Sair do Sistema</a>

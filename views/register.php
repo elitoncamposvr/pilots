@@ -26,6 +26,9 @@
 <body>
 
     <div class="container-register">
+        <div class="logo--field">
+            <img src="<?php echo BASE_URL; ?>assets/images/fkart-logo.png" class="logo" alt="Logo Fkart">
+        </div>
         <form id="form-register" method="POST">
             <?php if (isset($success) && !empty($success)) : ?>
                 <div class="success">
@@ -64,7 +67,10 @@
             </div>
         </form>
         <div class="table-line"><a href="<?php echo BASE_URL; ?>login">Deseja fazer login?</a></div>
-        <p>Fkart - Sistema Desenvolvido por <a href="https://7upweb.com.br/">7UpWeb</a></p>
+        <div class="logo--field">
+            <img src="<?php echo BASE_URL; ?>assets/images/force-kart.png" class="logo-sponsor" alt="Logo Force Kart">
+            <img src="<?php echo BASE_URL; ?>assets/images/acka.png" class="logo-sponsor" alt="Logo ACKA">
+        </div>
     </div>
 
     <!-- SCRIPTS JS -->
