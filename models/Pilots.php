@@ -101,6 +101,21 @@ class Pilots extends model
         $sql->execute();
     }
 
+    public function isTourneyRegistered($id)
+    {
+        $r = 0;
+        $sql = $this->db->prepare("SELECT tourney_registration as pd FROM pilots WHERE id = :id");
+        $sql->bindValue(':id', $id);
+        $sql->execute();
+
+        $row = $sql->fetch();
+        $r = $row['pd'];
+
+        if ($r == null) {
+            header("Location: " . BASE_URL . "pilots/tourney/" . $id);
+        }
+    }
+
     public function add($fullname_pilot, $cellphone, $nickname_pilot, $cpf, $birth_date, $id_company)
     {
 

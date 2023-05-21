@@ -24,7 +24,7 @@
 				<?php echo $pilot_info['fullname_pilot']; ?>
 			</div>
 			<div class="w-50">
-				<label for="nickname_pilot" class="bold">Apelido do Piloto:</label>
+				<label for="nickname_pilot" class="bold">Nome (Tabela de Pontuação):</label>
 				<?php echo $pilot_info['nickname_pilot']; ?>
 			</div>
 		</div>

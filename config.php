@@ -12,11 +12,11 @@ if(ENVIRONMENT == 'development'){
 	$config['dbpass'] = '';
 
 }else{
-	define("BASE_URL", "https://localhost/projects/pilots/");
-	$config['dbname'] = 'aventour';
+	define("BASE_URL", "https://pilotos.7upweb.com.br/");
+	$config['dbname'] = 'u206120604_fkart';
 	$config['host'] = 'localhost';
-	$config['dbuser'] = 'root';
-	$config['dbpass'] = '';
+	$config['dbuser'] = 'u206120604_fkart';
+	$config['dbpass'] = 'mIJu05e/00';
 
 }
 

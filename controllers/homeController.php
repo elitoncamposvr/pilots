@@ -16,13 +16,13 @@ class homeController extends controller
     {
         $data = array();
         $u = new Users();
+        $pilots = new Pilots();
+        $tourney = new Tournaments();
 		$u->setLoggedUser();
+        $pilots->isTourneyRegistered($u->getId());
         $company = new Companies($u->getCompany());
         $data['company_name'] = $company->getName();
         $data['pilot_name'] = $u->getName();
-        $pilots = new Pilots();
-        $tourney = new Tournaments();
-
         $data['pilot_info'] = $pilots->getInfo($u->getId(), $u->getCompany());
         $data['tourney_list'] = $tourney->getListAll($u->getCompany());
 

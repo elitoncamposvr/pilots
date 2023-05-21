@@ -21,7 +21,7 @@
 				<input class="w-100" type="text" name="fullname_pilot" value="<?php echo $pilots_info['fullname_pilot']; ?>" id="fullname_pilot" autofocus required>
 			</div>
 			<div class="table-40 my-s">
-				<label for="nickname_pilot">Apelido</label>
+				<label for="nickname_pilot">Nome (Tabela de Pontuação)</label>
 				<input class="w-100" type="text" name="nickname_pilot" id="nickname_pilot" value="<?php echo $pilots_info['nickname_pilot']; ?>">
 			</div>
 		</div>
@@ -38,7 +38,7 @@
 			</div>
 			<div class="table-30 my-s">
 				<label for="birth_date">Data Nascimento</label>
-				<input class="w-100" type="date" name="birth_date" id="birth_date" value="<?php echo $pilots_info['birth_date']; ?>">
+				<input class="w-100" type="text" name="birth_date" id="birth_date" value="<?php echo date('d/m/Y', strtotime($pilots_info['birth_date'])); ?>">
 			</div>
 		</div>
 

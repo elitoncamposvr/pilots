@@ -14,6 +14,8 @@ class loginController extends controller
 			$clear_cpf = array(".", "-");
 			$cpf = str_replace($clear_cpf, "", $cpf);
 
+			$birth_date = implode("-", array_reverse(explode("/", $birth_date)));
+
 			if ($u->doLogin($cpf, $birth_date)) {
 				header("Location: " . BASE_URL);
 				exit;
@@ -49,7 +51,9 @@ class loginController extends controller
 			$cpf = str_replace($clear_cpf, "", $cpf);
 
 			$clear_cellphone = array("(", ")", "-");
-			$cpf = str_replace($clear_cellphone, "", $cpf);
+			$cellphone = str_replace($clear_cellphone, "", $cellphone);
+
+			$birth_date = implode("-", array_reverse(explode("/", $birth_date)));
 
 			if ($pilots->isRegistered($fullname_pilot, $cellphone, $nickname_pilot, $cpf, $birth_date)) {
 				$data['error'] = "CPF já está cadastrado no sistema.";

@@ -37,7 +37,7 @@
         </div>
       <?php endif; ?>
       <input type="text" name="cpf" class="cpf" id="cpf" placeholder="CPF" autocomplete="off" required autofocus>
-      <input type="date" name="birth_date" class="birth_date" id="birth_date" placeholder="Data de Nascimento" required>
+      <input type="text" name="birth_date" class="birth_date" id="birth_date" placeholder="Data de Nascimento" required>
       <p><button type="submit">Entrar</button></p><br>
       <p><a href="<?php echo BASE_URL; ?>login/register">Ainda não tem cadastro? Registre-se!</a></p><br>
     </form>

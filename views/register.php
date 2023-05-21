@@ -47,7 +47,7 @@
                 <input type="text" name="fullname_pilot" id="fullname_pilot" required autofocus>
             </div>
             <div class="table-line">
-                <label for="nickname_pilot">Apelido do Piloto</label>
+                <label for="nickname_pilot">Nome (Tabela de Pontuação)</label>
                 <input type="text" name="nickname_pilot" id="nickname_pilot" required>
             </div>
             <div class="table-line">
@@ -56,7 +56,7 @@
             </div>
             <div class="table-line">
                 <label for="birth_date">Data de Nascimento</label>
-                <input type="date" name="birth_date" id="birth_date" required>
+                <input type="text" name="birth_date" id="birth_date" required>
             </div>
             <div class="table-line">
                 <label for="cellphone">Celular</label>
